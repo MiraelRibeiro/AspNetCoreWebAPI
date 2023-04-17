@@ -12,8 +12,9 @@ using System.Threading.Tasks;
 
 namespace SmartSchool.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("2.0")]
+    [Route("api/V{version:apiVersion}/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repo;

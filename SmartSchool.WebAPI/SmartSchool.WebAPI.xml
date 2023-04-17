@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get">
+            <summary>
+            Obtém todos os Alunos 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get(System.Int32)">
+            <summary>
+            Obtém um aluno por referência de Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Post(SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Insere um novo aluno
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Put(System.Int32,SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Atualiza todos os dados de um aluno especificado pelo Id 
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Patch(System.Int32,SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Atualização parcial dos dados de um aluno pelo Id
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Delete(System.Int32)">
+            <summary>
+            Deleta todos os dados de um aluno pelo Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

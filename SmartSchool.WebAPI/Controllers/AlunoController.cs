@@ -12,19 +12,32 @@ using System.Threading.Tasks;
 
 namespace SmartSchool.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    ///
+    /// </summary>
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/V{version:apiVersion}/[controller]")]
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
+        /// <param name="mapper"></param>
         public AlunoController(IRepository repository, IMapper mapper)
         {         
             _repo = repository;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Obtém todos os Alunos 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -34,6 +47,11 @@ namespace SmartSchool.WebAPI.Controllers
         }
 
 
+        /// <summary>
+        /// Obtém um aluno por referência de Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -45,7 +63,11 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(alunoDto);
         }
 
-        // POST api/<AlunoController>
+        /// <summary>
+        /// Insere um novo aluno
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(AlunoRegistrarDto model)
         {
@@ -57,7 +79,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Aluno não Cadastrado!");
         }
 
-        // PUT api/<AlunoController>/5
+        /// <summary>
+        /// Atualiza todos os dados de um aluno especificado pelo Id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, AlunoRegistrarDto model)
         {
@@ -72,6 +99,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Aluno não Atualizado!");
         }
 
+        /// <summary>
+        /// Atualização parcial dos dados de um aluno pelo Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, AlunoRegistrarDto model)
         {
@@ -86,7 +119,11 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Aluno não Atualizado!");
         }
 
-        // DELETE api/<AlunoController>/5
+        /// <summary>
+        /// Deleta todos os dados de um aluno pelo Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
